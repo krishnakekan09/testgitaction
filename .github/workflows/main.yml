@@ -7,7 +7,7 @@ on:
       file_path:
         description: file share path is provided
         required: true
-        default: /tmp/abc/619
+        default: '/tmp/abc/619'
   workflow_dispatch: null
 jobs:
   build:
@@ -16,8 +16,8 @@ jobs:
       - uses: actions/checkout@v3
       - name: Run a one-line script
         run: echo "******** file path is taken as variable from devops
-          pipeline*********" echo "Filepath -> "${{
-          github.event.client_payload.example-key }}
+          pipeline*********" 
+             echo ${{github.event.client_payload.example-key }}
       - name: Run a multi-line script
         run: |
           echo Add other actions to build,
